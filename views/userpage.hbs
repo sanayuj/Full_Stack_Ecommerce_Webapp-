@@ -20,21 +20,23 @@
   
       </li>
       
-      <li class="nav-item text-white" style="display:flex;justify-content: center;align-items: center;margin-left: 28rem;">
+      <li class="nav-item text-white mt-2" style="display:flex;justify-content: center;align-items: center;margin-left: 28rem;">
         {{#if user}}
-          {{user.Name}}
+          <p style="color: red;margin-top:15px ;">{{user.Name}}</p>
        <a class="nav-link text-white mt-3" href="/logout"><p>Logout</p></a>
 
           {{else}}
-          <a class="nav-link" href="/"><img src="https://img.icons8.com/windows/32/000000/contacts.png"/></a>
+          <a class="nav-link " href="/"><img src="https://img.icons8.com/windows/32/000000/contacts.png"/></a>
       {{/if}}
        
       
         
       </li>
+      {{#if user}}
       <li class="nav-item mt-2">
         <a class="nav-link" style="padding-right: 1rem;" href=""><img src="https://img.icons8.com/ios-glyphs/30/000000/shopping-cart--v1.png"/></a>
       </li>
+      {{/if}}
       <li>
         
       </li>
@@ -82,13 +84,13 @@
 
 <section>
     
-<div class="container mt-3">
+<div class="container mt-3 ">
     <div class="row">
- <div class="card" style="width: 18rem;">
-  <img src="/images/slr.jpeg.webp" class="card-img-top" alt="...">
+ <div class="card" style="width: 18rem;background-color: rgb(50, 38, 38); ">
+  <img src="/images/slr.jpeg.webp" class="card-img-top mt-1" alt="..." >
   <div class="card-body">
-    <h5 class="card-title">Camera</h5>
-    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+    <h5 class="card-title text-white">Camera</h5>
+    <p class="card-text text-white">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
     <a href="#" class="btn btn-primary">Add to Cart</a>
   </div>
 </div>

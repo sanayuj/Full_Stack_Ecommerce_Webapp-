@@ -7,8 +7,12 @@ const userHelpers=require("../Register/Register")
 
 /* GET users listing. */
 router.get('/', function(req, res, next) {
-  res.render('userSignup');
-
+  if(req.session.loggedIn){
+    res.redirect('/userpage')
+  }else
+    res.render('userSignup',{"LoginError":req.session.loggedErr})
+    req.session.loggedErr=false
+  
 });
 
 router.get('/login', function(req, res, next) {
@@ -30,9 +34,11 @@ router.post('/redirect', function(req, res, next) {
 router.post('/login',(req, res)=> {
   userHelpers.doLogin(req.body).then((response)=>{
     if(response.status){
+      req.session.loggedIn=true
       req.session.user=response.user
       res.redirect('/home')
     }else{
+      req.session.loggedErr=true
       res.redirect('/')
     }
   })
