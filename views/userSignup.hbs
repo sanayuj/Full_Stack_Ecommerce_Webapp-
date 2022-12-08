@@ -10,9 +10,7 @@
       </div>
       <div class="col-md-7 col-lg-5 col-xl-5 offset-xl-1">
         <form action="/login" method="POST">
-        {{#if loggedErr}}
-          <p class="error" style="color: white;">Invailed Username or Password</p>
-        {{/if}}
+        
           <!-- Email input -->
           <div class="form-outline mb-4">
             <input
@@ -36,6 +34,9 @@
             />
 
           </div>
+          {{#if loggedErr}}
+          <p class="error" style="color: rgb(255, 0, 0);">{{loggedErr}}</p>
+        {{/if}}
 
           <div class="d-flex justify-content-around align-items-center mb-4">
 

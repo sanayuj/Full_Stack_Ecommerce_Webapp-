@@ -8,9 +8,9 @@ const userHelpers=require("../Register/Register")
 /* GET users listing. */
 router.get('/', function(req, res, next) {
   if(req.session.loggedIn){
-    res.redirect('/userpage')
+    res.redirect('/home')
   }else
-    res.render('userSignup',{"LoginError":req.session.loggedErr})
+    res.render('userSignup',{"loggedErr":req.session.loggedErr})
     req.session.loggedErr=false
   
 });
@@ -21,7 +21,7 @@ router.get('/login', function(req, res, next) {
 
 router.get('/home', function(req, res, next) {
   var user=req.session.user
-  console.log(user);
+  // console.log(user);
   res.render('userpage',{user});
 });
 
@@ -38,7 +38,7 @@ router.post('/login',(req, res)=> {
       req.session.user=response.user
       res.redirect('/home')
     }else{
-      req.session.loggedErr=true
+      req.session.loggedErr="Invailed Username or Password"
       res.redirect('/')
     }
   })

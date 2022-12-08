@@ -8,11 +8,11 @@
   </button>
   <div class="collapse navbar-collapse" id="navbarNavDropdown">
     <ul class="navbar-nav">
-      <li class="nav-item active pt-2">
+      <li class="nav-item active pt-3">
         <a class="nav-link " style="padding-right: 3rem;
     padding-left: 3rem;" href="#">Menu </a>
       </li>
-      <li class="nav-item pl-3 pt-2">
+      <li class="nav-item pl-3 pt-3">
         <form class="form-inline ">
     <input class="form-control mr-sm-2 " style="margin-right:15rem;" type="search" placeholder="What are you looking for?" aria-label="Search">
     
@@ -22,7 +22,7 @@
       
       <li class="nav-item text-white mt-2" style="display:flex;justify-content: center;align-items: center;margin-left: 28rem;">
         {{#if user}}
-          <p style="color: red;margin-top:15px ;">{{user.Name}}</p>
+          <p style="color: rgb(171, 145, 145);margin-top:15px ;">{{user.Name}}</p>
        <a class="nav-link text-white mt-3" href="/logout"><p>Logout</p></a>
 
           {{else}}
@@ -33,7 +33,7 @@
         
       </li>
       {{#if user}}
-      <li class="nav-item mt-2">
+      <li class="nav-item mt-3">
         <a class="nav-link" style="padding-right: 1rem;" href=""><img src="https://img.icons8.com/ios-glyphs/30/000000/shopping-cart--v1.png"/></a>
       </li>
       {{/if}}
