@@ -34,4 +34,14 @@ module.exports={
             
         })
     },
+    getuserDetails:()=>{
+        return new Promise(async(resolve,reject)=>{
+await db.get().collection(collections.ADMIN_COLLECTION).find({},function(err,result){
+    if (err) throw err;
+    console.log(result.name);
+    db.close();
+})
+
+        }
+    )}
 }

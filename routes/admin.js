@@ -19,6 +19,7 @@ router.get('/', function(req, res, next)
 
 
 router.get('/adminpage',function(req,res,next){
+  adminHelpers.getuserDetails()
   res.render('adminpage',{admin:req.session.admin})
 })
 
