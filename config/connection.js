@@ -11,7 +11,6 @@ module.exports.connect=function(done){
     //    state.db.collection("data").insertOne({user:"sanay"})
         done()
     })
-   
 }  
 module. exports.get=function (){
 return state.db

@@ -1,5 +1,5 @@
-var db=require('../config/connection')
-var collection=require('../config/collections')
+const db=require('../config/connection')
+const collection=require('../config/collections')
 const bcrypt=require('bcrypt')
 module.exports={
     doSignup:(userData)=>{
@@ -13,10 +13,10 @@ module.exports={
     },
     doLogin:(userData)=>{
         return new Promise(async(resolve,reject)=>{
-            var loginStatus=false
-            var response={}
+            let loginStatus=false
+            let response={}
             console.log(userData);
-            var user=await db.get().collection(collection.USER_COLLECTION).findOne({Email:userData.Email})
+            let user=await db.get().collection(collection.USER_COLLECTION).findOne({Email:userData.Email})
             // console.log(user);
             if(user){
                 bcrypt.compare(userData.password,user.password).then((status)=>{
