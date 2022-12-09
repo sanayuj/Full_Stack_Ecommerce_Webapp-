@@ -28,6 +28,9 @@
               />
 
             </div>
+            {{#if loginErr}}
+            <p class="err" style="color: red;">Invailed username or password<br></p>
+            {{/if}}
 
             <button
               class="btn btn-primary btn-lg btn-block"
